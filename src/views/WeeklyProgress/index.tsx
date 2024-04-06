@@ -1,5 +1,10 @@
-import React from "react";
-
-export default function WeeklyProgress() {
-  return <div className="content-container">WeeklyProgress</div>;
+export default function WeeklyProgress(props: { theme: ColorTheme }) {
+  return (
+    <div
+      className="content-container align-down-center"
+      style={{ backgroundColor: props.theme.body }}
+    >
+      Weekly Progress
+    </div>
+  );
 }

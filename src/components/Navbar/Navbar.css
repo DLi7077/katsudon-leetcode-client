@@ -33,7 +33,6 @@ nav {
   display: flex;
   align-items: center;
   gap: 2rem;
-
   width: min(100vw, var(--content-width));
   box-sizing: border-box;
   z-index: 1;
