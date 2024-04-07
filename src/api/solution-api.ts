@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serverUrl = "https://katsudon-lc-server-stg-eed081005ad0.herokuapp.com/api/solution";
+const serverUrl = process.env.REACT_APP_SERVER_BASE + "/api/solution";
 const solutionController = axios.create({
   baseURL: serverUrl,
 });
@@ -11,7 +11,6 @@ export async function getSolutionsFromUser(
   sortOptions?: SortQueryParams,
   paginationOptions?: PaginationOptions
 ): Promise<Paginated<ProblemSolutions>> {
-  console.log(userId, filters, sortOptions, paginationOptions);
   return solutionController
     .get("/all", {
       params: {
