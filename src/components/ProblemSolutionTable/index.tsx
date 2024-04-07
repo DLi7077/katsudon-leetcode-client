@@ -16,8 +16,8 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
   const [count, setCount] = useState<number>(0);
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(25);
-  const [sortDir, setSortDir] = useState<Order>("asc");
-  const [sortBy, setSortBy] = useState<string>("id");
+  const [sortDir, setSortDir] = useState<Order>("desc");
+  const [sortBy, setSortBy] = useState<string>("lastSolved");
 
   const userId = "6306b34920cf5f80f7d0c20d";
   const filters: SolutionFilterOptions = {
@@ -47,7 +47,6 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
     event: React.MouseEvent<unknown>,
     property: string
   ) => {
-    console.log(property);
     const isAsc = sortBy === property && sortDir === "asc";
     setSortDir(isAsc ? "desc" : "asc");
     setSortBy(property);
