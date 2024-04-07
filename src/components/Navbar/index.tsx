@@ -4,9 +4,9 @@ import NavLink from "./NavLink";
 import { useLocation } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import useColorTheme, { highlightColor } from "../../hooks/useColorTheme";
-import _ from "lodash";
 import { PAGE_DATA } from "../../views";
 import { useEffect, useState } from "react";
+import _ from "lodash";
 
 const Effects = {
   tint: (hue: number) => ({
@@ -28,7 +28,6 @@ export default function Navbar(): JSX.Element {
     window.scrollTo(0, 0);
     // eslint-disable-next-line
   }, [location.pathname]);
-
 
   return (
     <nav
@@ -63,6 +62,7 @@ export default function Navbar(): JSX.Element {
             .omit(["/"]) // exclude base url from navbar routes
             .map((data: PageData, path: string) => (
               <NavLink
+                key={path}
                 path={path}
                 label={data.label}
                 highlight={highlightColor(data.hue)}
