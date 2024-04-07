@@ -34,6 +34,8 @@ code {
   width: min(100%, var(--content-width));
   min-height: 100vh;
   margin-top: calc(var(--navbar-height) + 20px);
+  box-sizing: border-box;
+  padding-inline: 1.5rem;
 }
 
 .align-down-center {
@@ -44,9 +46,23 @@ code {
   height: 100%;
 }
 
+.align-horizontal-center {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+
 blockquote {
   border-left: 2px solid rgba(255, 255, 255, 0.5);
   padding-left: 1rem;
+}
+
+.hover-link {
+  text-decoration: none;
+}
+.hover-link:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 500px) {

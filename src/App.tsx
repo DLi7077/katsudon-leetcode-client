@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import "./index.css";
 import { PAGE_DATA } from "./views";
 import _ from "lodash";
 import PageContainer from "./components/PageContainer";
 import { generateTheme } from "./hooks/useColorTheme";
+import "./index.css";
 
 function App() {
   const pageRoutes = _.map(PAGE_DATA, (data, path) => {
