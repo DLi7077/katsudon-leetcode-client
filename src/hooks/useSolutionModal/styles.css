@@ -1,0 +1,66 @@
+.solution-container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  background-color: #18171c;
+  padding: 0.5rem;
+  color: white;
+  width: 80%;
+  height: 80%;
+  font-size: 14px;
+}
+
+.leetcode-title {
+  font-size: 18px;
+}
+
+.problem-block {
+  background-color: #2a2a2a;
+  box-sizing: border-box;
+  width: 50%;
+  overflow-y: auto;
+}
+
+pre {
+  background-color: rgb(26, 26, 26);
+  overflow-x: auto;
+  white-space: pre-line;
+  padding: 0.5rem;
+}
+
+.solution-block {
+  background-color: #2a2a2a;
+  width: 50%;
+  overflow-y: auto;
+}
+
+.modal-content {
+  padding: 1rem;
+}
+
+.solution-code {
+  overflow: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .solution-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 90vh;
+    gap: 1rem;
+  }
+
+  .problem-block {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    border-bottom: 4px solid white;
+  }
+
+  .solution-block {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+}

@@ -29,31 +29,29 @@ export default function ProblemSolutionTableHeader(props: {
             sx={{
               color: "white",
               backgroundColor: "#202020",
+              ...(headCell.width &&  { width: `${headCell.width}px` }),
             }}
           >
-            {headCell.sortable ? (
-              <TableSortLabel
-                active={sortBy === headCell.id}
-                direction={sortBy === headCell.id ? sortDir : "asc"}
-                onClick={createSortHandler(headCell.id)}
-                sx={{
-                  "& .MuiTableSortLabel-icon": {
-                    color: "white !important",
-                  },
-                }}
-              >
-                {headCell.label}
-                {sortBy === headCell.id && (
-                  <Box component="span" sx={visuallyHidden}>
-                    {sortDir === "desc"
-                      ? "sorted descending"
-                      : "sorted ascending"}
-                  </Box>
-                )}
-              </TableSortLabel>
-            ) : (
-              headCell.label
-            )}
+            <TableSortLabel
+              active={sortBy === headCell.id}
+              direction={sortBy === headCell.id ? sortDir : "asc"}
+              onClick={createSortHandler(headCell.id)}
+              disabled={!headCell.sortable}
+              sx={{
+                "& .MuiTableSortLabel-icon": {
+                  color: "white !important",
+                },
+              }}
+            >
+              {headCell.label}
+              {sortBy === headCell.id && (
+                <Box component="span" sx={visuallyHidden}>
+                  {sortDir === "desc"
+                    ? "sorted descending"
+                    : "sorted ascending"}
+                </Box>
+              )}
+            </TableSortLabel>
           </TableCell>
         ))}
       </TableRow>

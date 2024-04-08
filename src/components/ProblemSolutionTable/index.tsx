@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { getSolutionsFromUser } from "../../api/solution-api";
 import ProblemSolutionRow from "./ProblemSolutionRow";
 import ProblemSolutionTableHeader from "./ProblemSolutionTableHeader";
+import useSolutionModal from "../../hooks/useSolutionModal";
 
 export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
   const [rows, setRows] = useState<ProblemSolutions[]>([]);
@@ -18,6 +19,7 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
   const [limit, setLimit] = useState(25);
   const [sortDir, setSortDir] = useState<Order>("desc");
   const [sortBy, setSortBy] = useState<string>("lastSolved");
+  const { handleOpenSolutionModel, SolutionModal } = useSolutionModal();
 
   const userId = "6306b34920cf5f80f7d0c20d";
   const filters: SolutionFilterOptions = {
@@ -50,6 +52,7 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
     const isAsc = sortBy === property && sortDir === "asc";
     setSortDir(isAsc ? "desc" : "asc");
     setSortBy(property);
+    setPage(0);
   };
 
   const handleChangePage = (event: unknown, newPage: number) => {
@@ -78,7 +81,7 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
             backgroundColor: props.theme.section,
             color: "white",
             padding: "8px",
-            paddingLeft: "12px"
+            paddingLeft: "12px",
           },
         },
       },
@@ -101,8 +104,10 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
 
   return (
     <ThemeProvider theme={theme}>
+      <SolutionModal />
       <div style={{ width: "100%" }}>
         <TablePagination
+          padding="none"
           rowsPerPageOptions={[10, 25, 50]}
           component={"div"}
           count={count}
@@ -120,7 +125,11 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
             />
             <TableBody>
               {rows.map((row) => (
-                <ProblemSolutionRow key={row.problem._id} row={row} />
+                <ProblemSolutionRow
+                  key={row.problem._id}
+                  row={row}
+                  handleOpenSolutionModel={handleOpenSolutionModel}
+                />
               ))}
             </TableBody>
           </Table>
