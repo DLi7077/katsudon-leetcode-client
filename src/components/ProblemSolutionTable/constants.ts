@@ -6,6 +6,7 @@ export type HeaderCell = {
   id: string;
   label: string;
   sortable: boolean;
+  width?: number;
 };
 
 export const TABLE_HEADERS: HeaderCell[] = [
@@ -13,6 +14,7 @@ export const TABLE_HEADERS: HeaderCell[] = [
     id: "id",
     label: "#",
     sortable: true,
+    width: 30,
   },
   {
     id: "title",
@@ -23,10 +25,12 @@ export const TABLE_HEADERS: HeaderCell[] = [
     id: "solution",
     label: "Solution",
     sortable: false,
+    width: 100,
   },
   {
     id: "lastSolved",
-    label: "Last Solved",
+    label: "Submitted",
+    width: 90,
     sortable: true,
   },
 ];

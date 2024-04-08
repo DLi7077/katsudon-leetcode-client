@@ -1,6 +1,6 @@
+import CPP from "../assets/languages/C++.svg";
 import C from "../assets/languages/C.svg";
 import CSharp from "../assets/languages/CSharp.svg";
-import CPP from "../assets/languages/C++.svg";
 import Elixir from "../assets/languages/Elixir.svg";
 import Golang from "../assets/languages/Golang.svg";
 import Java from "../assets/languages/Java.svg";
@@ -33,7 +33,7 @@ export const LANGUAGE_LOGOS: Record<string, string> = {
   TypeScript: TypeScript,
 };
 
-export const LANGUAGE_COMPILE_MAPPING = {
+export const LANGUAGE_COMPILE_MAPPING: Record<string, string> = {
   C: "c",
   "C#": "csharp",
   "C++": "cpp",
