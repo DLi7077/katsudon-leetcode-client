@@ -33,4 +33,5 @@ interface ProblemSolutions {
 interface SolutionFilterOptions {
   solution_language?: string;
   failed?: boolean;
+  tags: string[]
 }

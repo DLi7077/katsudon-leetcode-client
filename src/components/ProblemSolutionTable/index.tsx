@@ -12,7 +12,11 @@ import ProblemSolutionRow from "./ProblemSolutionRow";
 import ProblemSolutionTableHeader from "./ProblemSolutionTableHeader";
 import useSolutionModal from "../../hooks/useSolutionModal";
 
-export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
+export default function ProblemSolutionTable(props: {
+  theme: ColorTheme;
+  userId: string;
+  tags: string[];
+}) {
   const [rows, setRows] = useState<ProblemSolutions[]>([]);
   const [count, setCount] = useState<number>(0);
   const [page, setPage] = useState(0);
@@ -21,9 +25,9 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
   const [sortBy, setSortBy] = useState<string>("lastSolved");
   const { handleOpenSolutionModel, SolutionModal } = useSolutionModal();
 
-  const userId = "6306b34920cf5f80f7d0c20d";
   const filters: SolutionFilterOptions = {
     // solution_language: "C++",
+    tags: props.tags,
   };
 
   async function fetchSolutions(): Promise<void> {
@@ -32,12 +36,15 @@ export default function ProblemSolutionTable(props: { theme: ColorTheme }) {
       limit: limit,
     };
     const sortOptions: SortQueryParams = { sortBy, sortDir };
-    getSolutionsFromUser(userId, filters, sortOptions, paginationOptions).then(
-      (paginatedData: Paginated<ProblemSolutions>) => {
-        setRows(paginatedData.rows);
-        setCount(paginatedData.count);
-      }
-    );
+    getSolutionsFromUser(
+      props.userId,
+      filters,
+      sortOptions,
+      paginationOptions
+    ).then((paginatedData: Paginated<ProblemSolutions>) => {
+      setRows(paginatedData.rows);
+      setCount(paginatedData.count);
+    });
   }
 
   useEffect(() => {
