@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/katsudon-leetcode-client/static/css/main.e3508086.css",
+    "main.js": "/katsudon-leetcode-client/static/js/main.f59f1f5f.js",
+    "static/media/navbar-background.png": "/katsudon-leetcode-client/static/media/navbar-background.c681d70c2e36128d924e.png",
+    "static/media/Ruby.svg": "/katsudon-leetcode-client/static/media/Ruby.a2cd11fbe990f8f86dba9dff8739ffde.svg",
+    "static/media/Elixir.svg": "/katsudon-leetcode-client/static/media/Elixir.23a2a1fce08d49f821768cd2a0048db3.svg",
+    "static/media/Rust.svg": "/katsudon-leetcode-client/static/media/Rust.f6c0e91fa1592ca347c9a266b0b58c58.svg",
+    "static/media/Scala.svg": "/katsudon-leetcode-client/static/media/Scala.5e8adadaf2fa2d4be6b6ef3bfb251630.svg",
+    "static/media/PHP.svg": "/katsudon-leetcode-client/static/media/PHP.e71233459c2de6a06c5ac48f25ecd766.svg",
+    "static/media/Golang.svg": "/katsudon-leetcode-client/static/media/Golang.b06941a5fa802739aab5329a4cc40372.svg",
+    "static/media/C++.svg": "/katsudon-leetcode-client/static/media/C++.157c521f834a949ff5c229c7295c3446.svg",
+    "static/media/Java.svg": "/katsudon-leetcode-client/static/media/Java.1a020d6d625b3212eb7484ebc3d7ddbc.svg",
+    "static/media/Python.svg": "/katsudon-leetcode-client/static/media/Python.2abc268ffd5e4bb1df19c10c0c79e501.svg",
+    "static/media/JavaScript.svg": "/katsudon-leetcode-client/static/media/JavaScript.f719efab5b799ddc35b5055935a3cedd.svg",
+    "static/media/TypeScript.svg": "/katsudon-leetcode-client/static/media/TypeScript.65d286117e3668521589086fb6e07935.svg",
+    "static/media/logo.svg": "/katsudon-leetcode-client/static/media/logo.31dedd9733ec392e1bf77236cffcb06b.svg",
+    "static/media/Swift.svg": "/katsudon-leetcode-client/static/media/Swift.1216a1d0212bdecdd1625a6f9e4fee98.svg",
+    "static/media/Kotlin.svg": "/katsudon-leetcode-client/static/media/Kotlin.37e6e4c80e84015c4405f7d43e829fd2.svg",
+    "static/media/CSharp.svg": "/katsudon-leetcode-client/static/media/CSharp.885a32edda35150ea280405e3b5ceebb.svg",
+    "index.html": "/katsudon-leetcode-client/index.html",
+    "static/media/C.svg": "/katsudon-leetcode-client/static/media/C.cac16519759a989016e400dd7786fbcb.svg",
+    "main.e3508086.css.map": "/katsudon-leetcode-client/static/css/main.e3508086.css.map",
+    "main.f59f1f5f.js.map": "/katsudon-leetcode-client/static/js/main.f59f1f5f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e3508086.css",
+    "static/js/main.f59f1f5f.js"
+  ]
+}
