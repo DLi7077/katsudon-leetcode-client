@@ -5,6 +5,7 @@ import PageContainer from "./components/PageContainer";
 import { generateTheme } from "./hooks/useColorTheme";
 import "./index.css";
 import { PAGE_DATA } from "./views";
+import { createTheme, ThemeProvider } from "@mui/material";
 
 function App() {
   const pageRoutes = _.map(PAGE_DATA, (data, path) => {
@@ -18,11 +19,26 @@ function App() {
     );
   });
 
+  const theme = createTheme({
+    components: {
+      MuiChip: {
+        styleOverrides: {
+          root: {
+            color: "white",
+            backgroundColor: "#464646",
+            height: "1.25rem",
+          },
+        },
+      },
+    },
+  });
   return (
     <div className="align-down-center">
       <HashRouter>
         <Navbar />
-        <Routes>{pageRoutes}</Routes>
+        <ThemeProvider theme={theme}>
+          <Routes>{pageRoutes}</Routes>
+        </ThemeProvider>
       </HashRouter>
     </div>
   );
