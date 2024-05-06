@@ -2,6 +2,7 @@
   "name": "katsudon-leetcode-client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://dli7077.github.io/katsudon-leetcode-client",
   "engines": {
     "node": "18.x"
   },
@@ -33,11 +34,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -56,5 +58,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

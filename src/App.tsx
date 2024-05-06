@@ -1,10 +1,10 @@
-import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import { PAGE_DATA } from "./views";
 import _ from "lodash";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
 import PageContainer from "./components/PageContainer";
 import { generateTheme } from "./hooks/useColorTheme";
 import "./index.css";
+import { PAGE_DATA } from "./views";
 
 function App() {
   const pageRoutes = _.map(PAGE_DATA, (data, path) => {
@@ -20,8 +20,10 @@ function App() {
 
   return (
     <div className="align-down-center">
-      <Navbar />
-      <Routes>{pageRoutes}</Routes>
+      <HashRouter>
+        <Navbar />
+        <Routes>{pageRoutes}</Routes>
+      </HashRouter>
     </div>
   );
 }
