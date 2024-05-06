@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/katsudon-leetcode-client/static/css/main.e3508086.css",
-    "main.js": "/katsudon-leetcode-client/static/js/main.f59f1f5f.js",
+    "main.css": "/katsudon-leetcode-client/static/css/main.c9e65837.css",
+    "main.js": "/katsudon-leetcode-client/static/js/main.f15d1d0b.js",
     "static/media/navbar-background.png": "/katsudon-leetcode-client/static/media/navbar-background.c681d70c2e36128d924e.png",
     "static/media/Ruby.svg": "/katsudon-leetcode-client/static/media/Ruby.a2cd11fbe990f8f86dba9dff8739ffde.svg",
     "static/media/Elixir.svg": "/katsudon-leetcode-client/static/media/Elixir.23a2a1fce08d49f821768cd2a0048db3.svg",
@@ -20,11 +20,11 @@
     "static/media/CSharp.svg": "/katsudon-leetcode-client/static/media/CSharp.885a32edda35150ea280405e3b5ceebb.svg",
     "index.html": "/katsudon-leetcode-client/index.html",
     "static/media/C.svg": "/katsudon-leetcode-client/static/media/C.cac16519759a989016e400dd7786fbcb.svg",
-    "main.e3508086.css.map": "/katsudon-leetcode-client/static/css/main.e3508086.css.map",
-    "main.f59f1f5f.js.map": "/katsudon-leetcode-client/static/js/main.f59f1f5f.js.map"
+    "main.c9e65837.css.map": "/katsudon-leetcode-client/static/css/main.c9e65837.css.map",
+    "main.f15d1d0b.js.map": "/katsudon-leetcode-client/static/js/main.f15d1d0b.js.map"
   },
   "entrypoints": [
-    "static/css/main.e3508086.css",
-    "static/js/main.f59f1f5f.js"
+    "static/css/main.c9e65837.css",
+    "static/js/main.f15d1d0b.js"
   ]
 }
