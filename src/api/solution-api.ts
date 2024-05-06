@@ -1,9 +1,4 @@
-import axios from "axios";
-
-const serverUrl = process.env.REACT_APP_SERVER_BASE + "/api/solution";
-const solutionController = axios.create({
-  baseURL: serverUrl,
-});
+import Api from "./api";
 
 export async function getSolutionsFromUser(
   userId: string,
@@ -11,7 +6,7 @@ export async function getSolutionsFromUser(
   sortOptions?: SortQueryParams,
   paginationOptions?: PaginationOptions
 ): Promise<Paginated<ProblemSolutions>> {
-  return solutionController
+  return Api.solutionController
     .get("/all", {
       params: {
         userId,

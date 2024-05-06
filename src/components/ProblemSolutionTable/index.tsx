@@ -50,7 +50,7 @@ export default function ProblemSolutionTable(props: {
   useEffect(() => {
     fetchSolutions();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [count, page, limit, sortDir, sortBy]);
+  }, [props.tags, count, page, limit, sortDir, sortBy]);
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,

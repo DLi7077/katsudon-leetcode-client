@@ -14,3 +14,8 @@ interface Paginated<T> {
   count: number;
   rows: T[];
 }
+
+interface ProblemTagOptions {
+  userId?: string;
+  tags?: string[];
+}
