@@ -1,4 +1,4 @@
-import { Modal } from "@mui/material";
+import { Chip, createTheme, Modal, ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import { PROBLEM_DIFFICULTY_COLOR } from "../../constants/difficulty";
 import { LANGUAGE_COMPILE_MAPPING } from "../../constants/language";
@@ -78,50 +78,72 @@ export default function useSolutionModal() {
   }
 
   function SolutionModal(): JSX.Element {
+    const theme = createTheme({
+      components: {
+        MuiChip: {
+          styleOverrides: {
+            root: {
+              color: "white",
+              backgroundColor: "#464646",
+              height: "1.5rem",
+            },
+          },
+        },
+      },
+    });
     return (
-      <Modal
-        open={modalOpen}
-        onClose={handleCloseSolutionModel}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {problem ? (
-          <div className="solution-container">
-            <div className="problem-block">
-              <div className="modal-content">
-                <a
-                  href={problem.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="leetcode-title"
-                  style={{
-                    color: PROBLEM_DIFFICULTY_COLOR[problem.difficulty],
-                  }}
-                >
-                  {problem.id}. {problem.title}
-                </a>
-                {/* <Markup markup={problem.description} /> */}
-                <div
-                  dangerouslySetInnerHTML={{ __html: problem.description }}
-                />
+      <ThemeProvider theme={theme}>
+        <Modal
+          open={modalOpen}
+          onClose={handleCloseSolutionModel}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {problem ? (
+            <div className="solution-container">
+              <div className="problem-block">
+                <div className="modal-content">
+                  <a
+                    href={problem.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="leetcode-title"
+                    style={{
+                      color: PROBLEM_DIFFICULTY_COLOR[problem.difficulty],
+                    }}
+                  >
+                    {problem.id}. {problem.title}
+                  </a>
+                  <div
+                    className="align-horizontal-center"
+                    style={{ marginTop: "8px", gap: "8px", overflowX: "auto" }}
+                  >
+                    {problem.tags.map((tag) => (
+                      <Chip label={tag} variant="outlined" key={tag} />
+                    ))}
+                  </div>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: problem.description }}
+                  />
+                </div>
+              </div>
+              <div className="solution-block">
+                <div className="modal-content">
+                  <TabGroup
+                    tabs={solutionTabs}
+                    color={PROBLEM_DIFFICULTY_COLOR[problem.difficulty]}
+                  />
+                </div>
               </div>
             </div>
-            <div className="solution-block">
-              <div className="modal-content">
-                <TabGroup
-                  tabs={solutionTabs}
-                  color={PROBLEM_DIFFICULTY_COLOR[problem.difficulty]}
-                />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <></>
-        )}
-      </Modal>
+          ) : (
+            <></>
+          )}
+        </Modal>
+      </ThemeProvider>
     );
   }
 
